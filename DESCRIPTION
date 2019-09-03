@@ -1,0 +1,11 @@
+Package: annotatedMM
+Version: 0.1.1.9000
+Date: 2019-08-30
+Title: Annotated Matrix Market
+Description: Embed annotations in Matrix Market (MTX) file formats such as row and column names
+Author: Othmar Korn <othmar.korn@gmail.com>
+Maintainer: Othmar Korn <othmar.korn@gmail.com>
+License: MIT + file LICENSE
+Imports:
+	Matrix
+RoxygenNote: 6.1.1
