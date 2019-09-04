@@ -42,12 +42,21 @@ You can install the released version of annotatedMM from [CRAN](https://CRAN.R-p
 install.packages("annotatedMM")
 ```
 
+Or from GitHub:
+
+```
+library(devtools)
+devtools::install_github("okorn-github/annotatedMM")
+```
+
 ## Example
 
 ```
+  ## Consider an example 3x3 matrix:
   ## 1 0 4
   ## 2 0 5
   ## 3 0 6.66
+
   mat <- matrix(
     c(1,2,3,0,0,0,4,5,6.66),
     nrow=3,
@@ -56,9 +65,10 @@ install.packages("annotatedMM")
   colnames(mat) <- c("A","B","C")
   row.names(mat) <- c("one","two","three")
   outFile <- tempfile("out.amm")
-  annotatedMM::writeAMM(as(mat,"Matrix::sparseMatrix"), outFile)))
+  annotatedMM::writeAMM(as(mat,"Matrix::sparseMatrix"), outFile)
   # TRUE
 
+  ## Now reload the written AMM file and show that we got row and col names
   newMat <- annotatedMM::readAMM(outFile)
   colnames(newMat)
   # [1] "A" "B" "C"
