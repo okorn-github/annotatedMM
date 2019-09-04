@@ -2,23 +2,20 @@
 % Please edit documentation in R/readAMM.R
 \name{readAMM}
 \alias{readAMM}
-\title{Read an "Annotated" Matrix Market exchange file and return a sparse matrix}
+\title{Read an "Annotated" Matrix Market exchange file and return a sparseMatrix}
 \usage{
 readAMM(fileName = NULL)
 }
 \arguments{
-\item{fileName}{name of file to read}
+\item{fileName}{name of Matrix Market file to read}
 }
 \value{
-A sparse matrix object of type returned by Matrix::readMM
+A sparseMatrix (or descendant) object of type returned by Matrix::readMM
 }
 \description{
-TODO: Ensure documentation is accurate
-Reads an "Annotated" Matrix Market file. If row and column names were 
-recorded in the file, they will be attached to the returned sparse matrix
-object.
-}
-\examples{
-readAMM()
-
+Reads an "Annotated" Matrix Market file and returns a corresponding
+sparseMatrix (or descendant e.g. dgCMatrix). If row and column names are
+found they will be attached to the returned sparse matrix object.
+If reading a normal Matrix Market exchange file, this function should
+return result identical to Matrix::readMM.
 }

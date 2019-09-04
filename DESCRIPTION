@@ -2,10 +2,18 @@ Package: annotatedMM
 Version: 0.1.1.9000
 Date: 2019-08-30
 Title: Annotated Matrix Market
-Description: Embed annotations in Matrix Market (MTX) file formats such as row and column names
-Author: Othmar Korn <othmar.korn@gmail.com>
+Description: Embed annotations in Matrix Market (MM) file formats such as row
+    and column names. We call this format "Annotated" Matrix Market ("AMM")
+    and it is backwards compatible with MM. In future, support for custom
+    annotation embedding may be supported.
+Author: Othmar Korn
 Maintainer: Othmar Korn <othmar.korn@gmail.com>
+Authors@R:
+    person("Othmar", "Korn", email = "othmar.korn@gmail.com", role = c("aut", "cre"))
 License: MIT + file LICENSE
-Imports:
-	Matrix
+LazyData: true
 RoxygenNote: 6.1.1
+Imports:
+    Matrix
+Suggests: 
+    testthat (>= 2.1.0)

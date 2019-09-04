@@ -4,7 +4,7 @@
 \name{annotatedMM}
 \alias{annotatedMM}
 \alias{annotatedMM-package}
-\title{annotatedMM: A package for reading and writing "annotated" Matrix Market files}
+\title{annotatedMM: A package for reading and writing "annotated" Matrix Market (AMM) files}
 \description{
 The main functions of interest are writeAMM and readAMM.
 }

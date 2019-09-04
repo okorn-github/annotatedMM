@@ -7,24 +7,20 @@
 writeAMM(object = NULL, fileName = NULL)
 }
 \arguments{
-\item{object}{sparse matrix object to write to file, any type supported by Matrix::writeMM}
+\item{object}{sparseMatrix object to write to file}
 
-\item{fileName}{name of file to create (will add "amtx" extension if no extension given)}
+\item{fileName}{name of file to create}
 }
 \value{
 TRUE on success, FALSE otherwise
 }
 \description{
-TODO: Ensure documentation is accurate
-Writes a sparseMatrix (e.g. dgCMatrix object) to an "Annotated" Matrix Market
-file. Row and column names are written to the output "AMTX" file. An AMTX file
-is still a valid MTX file so the output should interroperate with other tools
-albeit in a reduced capacity, for instance row and column names would not
-be parsed as they are stored in the comments section of the file. The numeric
-content of the file should always be preserved however. NOTE: The Matrix
-Market exchange format is variously referred to as "MM", "MTX" or "MEX".
-}
-\examples{
-writeAMM()
-
+Writes a sparseMatrix (e.g. dgCMatrix object) to an "Annotated" Matrix
+Market file ("AMM"). Row and column names are written to the output AMM
+file. An AMM file is still a valid MM file so the output should inter-
+operate with other tools albeit in a reduced capacity, for instance row
+and column names would not be parsed as they are stored in the comments
+section of the file. The numeric content of the file should always be
+preserved, however. NOTE: The Matrix Market exchange format is variously
+known as "MM", "MTX" or "MEX".
 }
