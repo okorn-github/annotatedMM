@@ -15,5 +15,5 @@ getCommentLineMM(readConn, nLines = 1)
 A character vector of comment line/s starting from current file position
 }
 \description{
-Return 1:N comment lines (starting with "%") from a Matrix Market file
+Return 1:N comment lines (starting with "%") from a Matrix Market file.
 }

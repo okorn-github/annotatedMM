@@ -23,16 +23,16 @@ readAMM <- function(fileName=NULL) {
   ## Open MM file so we can first extract metadata from the header e.g. row
   ## and column names
   mmConReadOnly <- file(description=fileName, open="r", blocking=TRUE)
-  line <- annotatedMM::getCommentLineMM(mmConReadOnly)
+  line <- getCommentLineMM(mmConReadOnly)
   ## We stop when the first non-comment line (line starting other than '%' is
   ## encountered).
   while (length(line)) {
-    if (annotatedMM::isMetadataLine(line)) {
-      key <- annotatedMM::getMetadataName(line)
-      vals <- annotatedMM::getMetadataValues(line)
+    if (isMetadataLine(line)) {
+      key <- getMetadataName(line)
+      vals <- getMetadataValues(line)
       metadata[[key]] <- vals
     }
-    line <- annotatedMM::getCommentLineMM(mmConReadOnly)
+    line <- getCommentLineMM(mmConReadOnly)
   }
   close(mmConReadOnly)
 

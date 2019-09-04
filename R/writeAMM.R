@@ -39,14 +39,14 @@ writeAMM <- function(object=NULL, fileName=NULL) {
   ## without changes. This should be efficient since the comment lines are at
   ## the start of the file.
   mmConReadOnly <- file(description=mmbodyName, open="r", blocking=TRUE)
-  line <- annotatedMM::getCommentLineMM(mmConReadOnly)
+  line <- getCommentLineMM(mmConReadOnly)
   ## We stop when the first non-comment line (line starting other than '%' is
   ## encountered). Any comment lines interspersed with data lines (if any)
   ## should be preserved because we don't actually remove any lines from the
   ## output of Matrix::writeMM call
   while (length(line)) {
     cat(line, file=mmheaderName, append=TRUE)
-    line <- annotatedMM::getCommentLineMM(mmConReadOnly)
+    line <- getCommentLineMM(mmConReadOnly)
   }
   cat("\n", file=mmheaderName, append=TRUE)
   close(mmConReadOnly)

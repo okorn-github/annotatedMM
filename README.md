@@ -65,3 +65,4 @@ install.packages("annotatedMM")
   row.names(newMat)
   # [1] "one" "two" "three"
 ```
+

@@ -1,6 +1,6 @@
 #' Return 1:N comment lines (starting with "%") from a Matrix Market file
 #'
-#' Return 1:N comment lines (starting with "%") from a Matrix Market file
+#' Return 1:N comment lines (starting with "%") from a Matrix Market file.
 #'
 #' @param readConn an open file connection
 #' @param nLines optional number of lines to read, default 1
