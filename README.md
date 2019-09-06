@@ -46,7 +46,7 @@ Or from GitHub:
 
 ```
 library(devtools)
-devtools::install_github("okorn-github/annotatedMM")
+devtools::install_github("okorn-src/annotatedMM")
 ```
 
 ## Example

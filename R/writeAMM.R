@@ -55,11 +55,11 @@ writeAMM <- function(object=NULL, fileName=NULL) {
   ## Future TODO: Args to allow override of row/col names
   rowNames <- dimnames(object)[[1]]
   if (! length(rowNames)) {
-    warning("Input object has no row names, none will be written")
+    message("Input object has no row names, none will be written")
   }
   colNames <- dimnames(object)[[2]]
   if (! length(colNames)) {
-    warning("Input object has no column names, none will be written")
+    message("Input object has no column names, none will be written")
   }
   if (length(rowNames) > 0) {
     rnames <- paste0(c("%ROWNAMES",rowNames), collapse='\t')

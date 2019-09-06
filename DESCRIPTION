@@ -1,19 +1,21 @@
 Package: annotatedMM
 Version: 0.1.1.9000
-Date: 2019-08-30
+Date: 2019-09-06
 Title: Annotated Matrix Market
 Description: Embed annotations in Matrix Market (MM) file formats such as row
     and column names. We call this format "Annotated" Matrix Market ("AMM")
     and it is backwards compatible with MM. In future, support for custom
     annotation embedding may be supported.
-Author: Othmar Korn
-Maintainer: Othmar Korn <othmar.korn@gmail.com>
+URL: https://github.com/okorn-src/annotatedMM
+Author: Othmar Korn [aut, cre]
 Authors@R:
     person("Othmar", "Korn", email = "othmar.korn@gmail.com", role = c("aut", "cre"))
+Maintainer: Othmar Korn <othmar.korn@gmail.com>
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 6.1.1
 Imports:
+    methods,
     Matrix
 Suggests: 
     testthat (>= 2.1.0)

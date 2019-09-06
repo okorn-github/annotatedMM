@@ -16,7 +16,9 @@ test_that("Writing a valid matrix with row/col names should work", {
   row.names(verysmallMat) <- c("Gene1","Gene2","Gene3","Gene4","Gene5")
   colnames(verysmallMat) <- c("SampleA","SampleB","SampleC","SampleD","SampleE")
 
-  expect_equal(TRUE, annotatedMM::writeAMM(as(verysmallMat,"sparseMatrix"), outAMM))
+  retVal <- annotatedMM::writeAMM(as(verysmallMat,"sparseMatrix"), outAMM)
+  #message("DEBUG: Got retVal=[",retVal,"]")
+  expect_equal(TRUE, retVal)
 
   if (file.exists(outAMM)) {
     file.remove(outAMM)
@@ -24,14 +26,17 @@ test_that("Writing a valid matrix with row/col names should work", {
 })
 
 
-test_that("Writing a valid matrix without row/col names gives warning", {
+test_that("Writing a matrix without row/col names should work", {
   outAMM <- tempfile("NIST_5x5_nometa", fileext=".amm")
   verysmallMat <- matrix(
     c(1,0,0,0,0,0,10.5,0,250.5,0,0,0,0.15,0,0,6,0,0,-280,0,0,0,0,33.32,12),
     nrow=5,
     ncol=5
   )
-  expect_warning(annotatedMM::writeAMM(as(verysmallMat,"sparseMatrix"), outAMM))
+
+  retVal <- annotatedMM::writeAMM(as(verysmallMat,"sparseMatrix"), outAMM)
+  #message("DEBUG: Got retVal=[",retVal,"]")
+  expect_equal(TRUE, retVal)
 
   if (file.exists(outAMM)) {
     file.remove(outAMM)
@@ -48,7 +53,9 @@ test_that("Writing a matrix having ONLY row names should work", {
   )
   row.names(verysmallMat) <- c("Gene1","Gene2","Gene3","Gene4","Gene5")
 
-  expect_equal(TRUE, suppressWarnings(annotatedMM::writeAMM(as(verysmallMat,"sparseMatrix"), outAMM)))
+  retVal <- annotatedMM::writeAMM(as(verysmallMat,"sparseMatrix"), outAMM)
+  #message("DEBUG: Got retVal=[",retVal,"]")
+  expect_equal(TRUE, retVal)
 
   if (file.exists(outAMM)) {
     file.remove(outAMM)
@@ -65,7 +72,9 @@ test_that("Writing a matrix having ONLY column names should work", {
   )
   colnames(verysmallMat) <- c("SampleA","SampleB","SampleC","SampleD","SampleE")
 
-  expect_equal(TRUE, suppressWarnings(annotatedMM::writeAMM(as(verysmallMat,"sparseMatrix"), outAMM)))
+  retVal <- annotatedMM::writeAMM(as(verysmallMat,"sparseMatrix"), outAMM)
+  #message("DEBUG: Got retVal=[",retVal,"]")
+  expect_equal(TRUE, retVal)
 
   if (file.exists(outAMM)) {
     file.remove(outAMM)
@@ -108,7 +117,9 @@ test_that("Writing a zero matrix should work", {
     ncol=5
   )
   ## suppress warning related to lack of row/col names
-  expect_equal(TRUE, suppressWarnings(annotatedMM::writeAMM(as(zeroMat,"sparseMatrix"), outAMM)))
+  retVal <- annotatedMM::writeAMM(as(zeroMat,"sparseMatrix"), outAMM)
+  #message("DEBUG: Got retVal=[",retVal,"]")
+  expect_equal(TRUE, retVal)
 
   if (file.exists(outAMM)) {
     file.remove(outAMM)

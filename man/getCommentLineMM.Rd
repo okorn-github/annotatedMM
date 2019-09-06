@@ -2,7 +2,7 @@
 % Please edit documentation in R/getCommentLineMM.R
 \name{getCommentLineMM}
 \alias{getCommentLineMM}
-\title{Return 1:N comment lines (starting with "%") from a Matrix Market file}
+\title{Return 1:N comment lines from a Matrix Market file}
 \usage{
 getCommentLineMM(readConn, nLines = 1)
 }
@@ -15,5 +15,5 @@ getCommentLineMM(readConn, nLines = 1)
 A character vector of comment line/s starting from current file position
 }
 \description{
-Return 1:N comment lines (starting with "%") from a Matrix Market file.
+Return 1:N comment lines from a Matrix Market file
 }
